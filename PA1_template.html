@@ -120,6 +120,8 @@ $(document).ready(function () {
 </div>
 
 
+<p>Set global options to ensure everything will be outputted</p>
+<pre class="r"><code>knitr:: opts_chunk$set(echo=TRUE)</code></pre>
 <div id="loading-and-preprocessing-the-data" class="section level2">
 <h2>Loading and preprocessing the data</h2>
 <ol style="list-style-type: decimal">
@@ -177,7 +179,7 @@ dateFilePath &lt;- file.path(dataDir, &quot;date_time_downloaded.txt&quot;)</cod
 ##  $ steps   : int  NA NA NA NA NA NA NA NA NA NA ...
 ##  $ date    : Factor w/ 61 levels &quot;2012-10-01&quot;,&quot;2012-10-02&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
 ##  $ interval: int  0 5 10 15 20 25 30 35 40 45 ...</code></pre>
-<p>The variables included in this dataset are: . steps: Number of steps taking in a 5-minute interval (missing values are coded as NA ) . date: The date on which the measurement was taken in YYYY-MM-DD format . interval: Identifier for the 5-minute interval in which measurement was taken</p>
+<p>The variables included in this dataset are: <em>.</em> steps: Number of steps taking in a 5-minute interval (missing values are coded as NA ) <em>.</em> date: The date on which the measurement was taken in YYYY-MM-DD format <em>.</em> interval: Identifier for the 5-minute interval in which measurement was taken</p>
 <ol start="2" style="list-style-type: decimal">
 <li>Preprocess the data</li>
 </ol>

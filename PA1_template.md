@@ -1,5 +1,10 @@
 # Reproducible Research: Peer Assessment 1
 
+Set global options to ensure everything will be outputted
+
+```r
+knitr:: opts_chunk$set(echo=TRUE)
+```
 
 ## Loading and preprocessing the data
 1. Load in data
@@ -80,9 +85,9 @@ str(dataset)
 ```
 
 The variables included in this dataset are: 
-. steps: Number of steps taking in a 5-minute interval (missing values are coded as  NA ) 
-. date: The date on which the measurement was taken in YYYY-MM-DD format 
-. interval: Identifier for the 5-minute interval in which measurement was taken 
+*.* steps: Number of steps taking in a 5-minute interval (missing values are coded as  NA ) 
+*.* date: The date on which the measurement was taken in YYYY-MM-DD format 
+*.* interval: Identifier for the 5-minute interval in which measurement was taken 
 
 2. Preprocess the data
 
@@ -145,7 +150,7 @@ library(lattice)
 histogram(sumStepsPerDay$steps,breaks=10,main="Total Steps per Day", xlab="Steps per Day")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-16-1.png)<!-- -->
+![](PA1_template_files/figure-html/unnamed-chunk-17-1.png)<!-- -->
 
 2. Calculate and report the mean and median of the total number of steps taken per day.
 
@@ -175,7 +180,7 @@ median1
 xyplot(steps~sInterval,data=meanStepsPerInterval, type = "l", grid= T, ylab="Number of Steps", xlab="5 minute intervals since midnight", main="Average number of steps by 5-minute intervals")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-18-1.png)<!-- -->
+![](PA1_template_files/figure-html/unnamed-chunk-19-1.png)<!-- -->
 
 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -280,7 +285,7 @@ sumStepsPerDay2 <- aggregate(steps ~ date, data=newDataset, FUN="sum")
 histogram(sumStepsPerDay2$steps,breaks=10,main="Total Steps per Day (Missing Data Imputed)", xlab="Steps per Day")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-24-1.png)<!-- -->
+![](PA1_template_files/figure-html/unnamed-chunk-25-1.png)<!-- -->
 
 b. Calculate the mean and median total number of steps taken per day.
 The mean and median for the new dataset are calculated and then compared to the mean and median of the original dataset.
@@ -401,6 +406,6 @@ b. Create the plot.
 xyplot(steps~sInterval | Weekday,data=meanStepsPerInterval2, type = "l", grid= T, layout=c(1,2), ylab="Number of Steps", xlab="5 minute intervals since midnight", main="Average 5-minute activity intervals: Weekdays vs Weekends")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-33-1.png)<!-- -->
+![](PA1_template_files/figure-html/unnamed-chunk-34-1.png)<!-- -->
 
 This plot shows that steps are more evenly spread throughout the day on weekends. On weekdays, steps are more concentrated in the morning and evening.

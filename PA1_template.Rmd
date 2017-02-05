@@ -5,6 +5,10 @@ output:
     keep_md: true
 ---
 
+Set global options to ensure everything will be outputted
+```{r}
+knitr:: opts_chunk$set(echo=TRUE)
+```
 
 ## Loading and preprocessing the data
 1. Load in data
